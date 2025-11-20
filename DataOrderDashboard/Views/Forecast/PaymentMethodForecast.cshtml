@@ -1,0 +1,39 @@
+﻿@model IEnumerable<dynamic>
+@{
+    ViewData["Title"] = "PaymentMethodForecast";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row clearfix">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="body">
+                        <h4>
+                            🎮​ Tahminleme Sayfası
+                            <small class="text-muted">2026 Yılı Ödeme Yöntemleri Tahminleri</small>
+                        </h4>
+                        <table class="table table-bordered table-hover">
+                            <tr>
+                                <th>Ödeme Yöntemi</th>
+                                <th>Ay</th>
+                                <th>Tahmini Sipariş Sayısı</th>
+
+                            </tr>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <th>@item.PaymentMethod</th>
+                                    <th>@item.Month</th>
+                                    <th>@item.ForecastedCount</th>
+                                </tr>
+                            }
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

@@ -1,0 +1,83 @@
+﻿@model List<OrderSummaryViewModel>
+<div class="row clearfix">
+    <div class="col-sm-12 col-md-12 col-lg-12">
+        <div class="card">
+            <div class="header">
+                <h2>Son Siparişler <small>Son 5 Sipariş / Sipariş Durumları</small> </h2>
+            </div>
+            <div class="body table-responsive members_profiles">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Müşteri</th>
+                            <th>Ürün</th>
+                            <th>Birim Fiyat / €</th>
+                            <th>Toplam Fiyat</th>
+                            <th>Ödeme Yöntemi</th>
+                            <th>Sipariş Durumu</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach(var item in Model)
+                        {
+                            <tr>
+                                <td>@item.CustomerName</td>
+                                <td>@item.ProductName</td>
+                                <td>@item.UnitPrice.ToString("F2") €</td>
+                                <td>@(item.Quantity * @item.UnitPrice) €</td>
+                                <td>
+                                    @if (item.PaymentMethod == "Kredi Kartı")
+                                    {
+                                        <span>💳️​ @item.PaymentMethod</span>
+                                    }
+                                    else if (item.PaymentMethod == "Havale/EFT")
+                                    {
+                                        <span>💸 @item.PaymentMethod</span>
+                                    }
+                                    else if (item.PaymentMethod == "Kripto Ödeme")
+                                    {
+                                        <span>₿ @item.PaymentMethod</span>
+                                    }
+                                    else if (item.PaymentMethod == "Kapıda Ödeme")
+                                    {
+                                        <span>🤑 @item.PaymentMethod</span>
+                                    }
+                                    else if (item.PaymentMethod == "Alışveriş Kredisi")
+                                    {
+                                        <span>🛍️ @item.PaymentMethod</span>
+                                    }
+                                    else if (item.PaymentMethod == "PayPal")
+                                    {
+                                        <span>🅿️ @item.PaymentMethod</span>
+                                    }
+                                    else if (item.PaymentMethod == "Banka Transferi")
+                                    {
+                                        <span>🏛 @item.PaymentMethod</span>
+                                    }
+                                </td>
+                                <td>
+                                    @if(item.OrderStatus=="Teslim Edildi")
+                                    {
+                                        <span>✔️​ @item.OrderStatus</span>
+                                    }
+                                    else if (item.OrderStatus == "İade Edildi")
+                                    {
+                                        <span>❌​ @item.OrderStatus</span>
+                                    }
+                                    else if (item.OrderStatus == "Kargoya Verildi")
+                                    {
+                                        <span>🚚​ @item.OrderStatus</span>
+                                    }
+                                    else if (item.OrderStatus == "Hazırlanıyor")
+                                    {
+                                        <span>⏳ @item.OrderStatus</span>
+                                    }
+                            </td>
+                      </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

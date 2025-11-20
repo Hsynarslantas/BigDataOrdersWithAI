@@ -1,0 +1,221 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+<style>
+    .l-cyan {
+        background-color: #00bcd4 !important;
+    }
+
+    .l-teal {
+        background-color: #009688 !important;
+    }
+
+    .l-purple {
+        background-color: #9c27b0 !important;
+    }
+    .l-red {
+        background-color:indianred !important;
+    }
+
+    .l-turk {
+        background-color: turquoise !important;
+    }
+
+    .l-wheat {
+        background-color: wheat !important;
+    }
+</style>
+<section class="content">
+    <div class="block-header">
+        <div class="row">
+            <div class="col-lg-7 col-md-6 col-sm-12">
+                <h2>
+                    İstatistik Sayfası
+                    <small class="text-muted">Sipariş ve Diğer İstatistikler</small>
+                </h2>
+            </div>
+            <div class="col-lg-5 col-md-6 col-sm-12">
+                <ul class="breadcrumb float-md-right">
+                    <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i> Ürünler</a></li>
+                    <li class="breadcrumb-item"><a href="javascript:void(0);">Sipariş Listesi</a></li>
+                    <li class="breadcrumb-item active">Ana Sayfa</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="row clearfix">
+        <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="card info-box-2 l-parpl">
+                <div class="body" style="padding:10px 0 8px 0;">
+                    <div class="icon" style="display:flex;align-items:center;justify-content:center;height:45px;">
+                        <i class="zmdi zmdi-flag" style="font-size:34px;color:white;"></i>
+                    </div>
+                    <div class="content col-12 text-center" style="margin-top:2px">
+                        <div class="text">Kategori Sayısı</div>
+                        <div class="number">@ViewBag.CategoryCount</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="card info-box-2 l-salmon">
+                <div class="body" style="padding:10px 0 8px 0;">
+                    <div class="icon" style="display:flex;align-items:center;justify-content:center;height:45px;">
+                        <i class="zmdi zmdi-account" style="font-size:34px;color:white;"></i>
+                    </div>
+                    <div class="content col-12 text-center" style="margin-top:2px">
+                        <div class="text">Müşteri Sayısı</div>
+                        <div class="number">@ViewBag.CustomerCount</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="card info-box-2 l-amber">
+                <div class="body" style="padding:10px 0 8px 0;">
+                    <div class="icon" style="display:flex;align-items:center;justify-content:center;height:45px;">
+                        <i class="zmdi zmdi-shopping-cart" style="font-size:34px;color:white;"></i>
+                    </div>
+                    <div class="content col-12 text-center" style="margin-top:2px">
+                        <div class="text">Ürün Sayısı</div>
+                        <div class="number">@ViewBag.ProductCount</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="card info-box-2 l-turk">
+                <div class="body" style="padding:10px 0 8px 0;">
+                    <div class="icon" style="display:flex;align-items:center;justify-content:center;height:45px;">
+                        <i class="zmdi zmdi-money" style="font-size:34px;color:white;"></i>
+                    </div>
+                    <div class="content col-12 text-center" style="margin-top:2px">
+                        <div class="text">Sipariş Sayısı</div>
+                        <div class="number">@ViewBag.OrderCount</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+
+    <div class="row clearfix mt-3">
+        <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="card info-box-2 l-wheat">
+                <div class="body" style="padding:10px 0 8px 0;">
+                    <div class="icon" style="display:flex;align-items:center;justify-content:center;height:45px;">
+                        <i class="zmdi zmdi-city-alt" style="font-size:34px;color:white;"></i>
+                    </div>
+                    <div class="content col-12 text-center" style="margin-top:2px">
+                        <div class="text">Müşteri Ülke Sayısı</div>
+                        <div class="number">@ViewBag.CustomerCountryCount</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="card info-box-2 l-red">
+                <div class="body" style="padding:10px 0 8px 0;">
+                    <div class="icon" style="display:flex;align-items:center;justify-content:center;height:45px;">
+                        <i class="zmdi zmdi-city" style="font-size:34px;color:white;"></i>
+                    </div>
+                    <div class="content col-12 text-center" style="margin-top:2px">
+                        <div class="text">Müşteri Şehir Sayısı</div>
+                        <div class="number">@ViewBag.CustomerCityCount</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="card info-box-2 l-green">
+                <div class="body" style="padding:10px 0 8px 0;">
+                    <div class="icon" style="display:flex;align-items:center;justify-content:center;height:45px;">
+                        <i class="zmdi zmdi-balance" style="font-size:34px;color:white;"></i>
+                    </div>
+                    <div class="content col-12 text-center" style="margin-top:2px">
+                        <div class="text">Tamamlanan Sipariş Sayısı</div>
+                        <div class="number">@ViewBag.ProductStatusByCompleted</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="card info-box-2 l-parpl">
+                <div class="body" style="padding:10px 0 8px 0;">
+                    <div class="icon" style="display:flex;align-items:center;justify-content:center;height:45px;">
+                        <i class="zmdi zmdi-close" style="font-size:34px;color:white;"></i>
+                    </div>
+                    <div class="content col-12 text-center" style="margin-top:2px">
+                        <div class="text">İade Edilen Sipariş Sayısı</div>
+                        <div class="number">@ViewBag.ProductStatusByReturn</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+    <div class="row clearfix mt-3">
+        <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="card info-box-2 l-cyan">
+                <div class="body" style="padding:10px 0 8px 0;">
+                    <div class="icon" style="display:flex;align-items:center;justify-content:center;height:45px;">
+                        <i class="zmdi zmdi-collection-item-9" style="font-size:34px;color:white;"></i>
+                    </div>
+                    <div class="content col-12 text-center" style="margin-top:2px">
+                        <div class="text">Eylül Ayındaki Sipariş Sayısı</div>
+                        <div class="number">@ViewBag.SeptemberOrders</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="card info-box-2 l-teal">
+                <div class="body" style="padding:10px 0 8px 0;">
+                    <div class="icon" style="display:flex;align-items:center;justify-content:center;height:45px;">
+                        <i class="zmdi zmdi-collection-plus" style="font-size:34px;color:white;"></i>
+                    </div>
+                    <div class="content col-12 text-center" style="margin-top:2px">
+                        <div class="text">2025 Yılı Sipariş Sayısı</div>
+                        <div class="number">@ViewBag.Orders2025Count</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="card info-box-2 l-purple">
+                <div class="body" style="padding:10px 0 8px 0;">
+                    <div class="icon" style="display:flex;align-items:center;justify-content:center;height:45px;">
+                        <i class="zmdi zmdi-card" style="font-size:34px;color:white;"></i>
+                    </div>
+                    <div class="content col-12 text-center" style="margin-top:2px">
+                        <div class="text">Kripto İle Ödenen Sipariş Sayısı</div>
+                        <div class="number">@ViewBag.PaymentMehtodByCrypto</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="card info-box-2 l-pink">
+                <div class="body" style="padding:10px 0 8px 0;">
+                    <div class="icon" style="display:flex;align-items:center;justify-content:center;height:45px;">
+                        <i class="zmdi zmdi-card-giftcard" style="font-size:34px;color:white;"></i>
+                    </div>
+                    <div class="content col-12 text-center" style="margin-top:2px">
+                        <div class="text">Hediye Gönderilen Ürün Sayısı</div>
+                        <div class="number">@ViewBag.OrderTypeByGift</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>

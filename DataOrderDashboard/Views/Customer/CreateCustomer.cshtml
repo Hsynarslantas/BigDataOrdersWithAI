@@ -1,0 +1,50 @@
+﻿@model Customer
+@{
+    ViewData["Title"] = "CreateCustomer";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row clearfix">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="body">
+                        <h4>🧮 Yeni Müşteri Ekleme Sayfası</h4>
+                        <form method="post">
+                            <label>Müşteri Adı</label>
+                            <input type="text" asp-for="CustomerName" class="form-control" />
+                            <br />
+                            <label>Müşteri Soyadı</label>
+                            <input type="text" asp-for="CustomerSurname" class="form-control" />
+                            <br />
+                            <label>Müşteri Resmi(Url)</label>
+                            <input type="text" asp-for="CustomerImageUrl" class="form-control" />
+                            <br />
+                            <label>Müşteri Maili</label>
+                            <input type="text" asp-for="CustomerEmail" class="form-control" />
+                            <br />
+                            <label>Müşteri Telefon Numarası</label>
+                            <input type="text" asp-for="CustomerPhone" class="form-control" />
+                            <br />
+                            <label>Müşteri Ülkesi</label>
+                            <input type="text" asp-for="CustomerCountry" class="form-control" />
+                            <br />
+                            <label>Müşteri Şehri</label>
+                            <input type="text" asp-for="CustomerCity" class="form-control" />
+                            <br />
+                            <label>Müşteri İlçesi</label>
+                            <input type="text" asp-for="CustomerDistrict" class="form-control" />
+                            <br />
+                            <label>Müşteri Adresi</label>
+                            <input type="text" asp-for="CustomerAddress" class="form-control" />
+                            <br />
+                            <button class="btn btn-info">Müşteriyi Ekle</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

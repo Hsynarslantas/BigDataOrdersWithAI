@@ -1,0 +1,44 @@
+﻿@model IEnumerable<dynamic>
+@{
+    ViewData["Title"] = "MostSalesProduct2026Forecast";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row clearfix">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="body">
+                        <h4>
+
+                            📦 Ürün Bazlı Veri Tahminleme Sayfası
+                        </h4>
+                        <small class="text-muted">2024 ve 2025 Yılı Verilerine Göre Tahminlenmiştir</small>
+                        <table class="table table-bordered table-hover">
+                            <tr>
+                                <th>Ürünler</th>
+                                <th>2024 Ürün Satış Sayısı</th>
+                                <th>2025 Ürün Satış Sayısı</th>
+                                <th>Tahmini Satış Sayısı</th>
+                               
+
+                            </tr>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <th>@item.Product</th>
+                                    <th>@item.Year2024</th>
+                                    <th>@item.Year2025</th>
+                                    <th>@item.ForecastedValues</th>
+
+                                </tr>
+                            }
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

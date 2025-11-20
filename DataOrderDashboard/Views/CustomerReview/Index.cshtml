@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+<section class="content profile-page">
+    <div class="container-fluid">
+        <div class="row clearfix">
+            <div class="col-sm-12">
+                <div class="card overflowhidden m-t-20">
+                    @await Component.InvokeAsync("_CustomerDetailMainCoverComponentPartial")
+
+                    @await Component.InvokeAsync("_CustomerDetailMainCoverComponentPartial")
+                </div>
+                @await Component.InvokeAsync("_CustomerDetailStatisticComponentPartial")
+            </div>
+        </div>
+        @await Component.InvokeAsync("_CustomerReviewWithAIComponentPartial")
+    </div>
+</section>
+

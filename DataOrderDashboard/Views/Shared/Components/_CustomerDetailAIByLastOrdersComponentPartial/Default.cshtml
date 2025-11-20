@@ -1,0 +1,32 @@
+﻿@using DataOrderDashboard.Models.ForecastModels
+@model CustomerDetailForecastViewModel
+
+<div class="row clearfix">
+    <div class="col-lg-12 col-md-12">
+        <div class="card">
+            <div class="header">
+                <h2>Makine Öğrenmesi İle Müşteri Analiz Raporu</h2>
+            </div>
+
+            <div class="body">
+
+                <p><strong>Son Alışveriş Tarihi:</strong>📅 @Model.LastOrderDate</p>
+                <p><strong>Son Alınan Ürün:</strong>🛒 @Model.LastProduct</p>
+
+                <hr />
+
+                <p><strong>Tahmini Yeni Sipariş Tarihi:</strong>🧠 @Model.PredictedDate</p>
+                <p><strong>Tahmini Kategori:</strong>📁 @Model.PredictedCategory</p>
+
+                <hr />
+
+                <p class="text-muted">
+                    Müşterinin geçmiş siparişlerine göre bir sonraki alışveriş tarihinin
+                    <strong>🕵🏻 @Model.PredictedDate</strong> civarında olacağı ve muhtemelen
+                    <strong>🔍 @Model.PredictedCategory</strong> kategorisinden alışveriş yapacağı öngörülmektedir.
+                </p>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,49 @@
+﻿@model IEnumerable<dynamic>
+@{
+    ViewData["Title"] = "GermanyOrderSalesForecast";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+<section class="content">
+    <div class="container-fluid">
+        <div class="row clearfix">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="body">
+                        <h4>
+                            <img src="https://flagcdn.com/w20/de.png" title="Germany" alt="Germany Flag" style="width:28px;height:auto;vertical-align:middle;margin-right:8px;" />
+                            Ülke Bazlı Veri Tahminleme Sayfası
+                        </h4>
+                        <small class="text-muted">2024 ve 2025 Yılı Verilerine Göre Tahminlenmiştir</small>
+                        <table class="table table-bordered table-hover">
+                            <tr>
+                                <th>Şehir</th>
+                                <th>2024 Sipariş Sayısı</th>
+                                <th>2025 Sipariş Sayısı</th>
+                                <th>Tahmini Sipariş Sayısı</th>
+                                <th>2026 Sipariş Değişim Oranı (%)</th>
+
+                            </tr>
+                            @foreach (var item in Model)
+                            {
+                                var growth = (double?)item.GrowthRate;
+                                var growthClass = growth.HasValue
+                                ? (growth.Value >= 0 ? "text-success" : "text-danger")
+                                : "text-muted";
+                                var growthText = growth.HasValue ? growth.Value.ToString("F2") + "%" : "-";
+                                <tr>
+                                    <th>@item.City</th>
+                                    <th>@item.Year2024</th>
+                                    <th>@item.Year2025</th>
+                                    <th>@item.ForecastedCount</th>
+                                    <td class="@growthClass">@growthText</td>
+                                </tr>
+                            }
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+

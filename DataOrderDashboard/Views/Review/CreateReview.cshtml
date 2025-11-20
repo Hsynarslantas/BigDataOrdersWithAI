@@ -1,0 +1,46 @@
+﻿@model Review
+@{
+    ViewData["Title"] = "CreateReview";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row clearfix">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="body">
+                        <h4>⭐ Değerlendirme Ekleme Sayfası</h4>
+                        <form method="post">
+                            <label>Müşteri Adı</label>
+                            <input type="text" asp-for="CustomerId" class="form-control" />
+                            <br />
+                            <label>Ürün Adı</label>
+                            <input type="text" asp-for="ProductId" class="form-control" />
+                            <br />
+                            <label>Değerlendirme / Skor</label>
+                            <input type="text" asp-for="Rating" class="form-control" />
+                            <br />
+                            <label>Yorumun Duygu Durumu</label>
+                            <input type="text" asp-for="Sentiment" class="form-control" />
+                            <br />
+                            <label>Satın Alma Türü</label>
+                            <input type="text" asp-for="PurchaseType" class="form-control" />
+                            <br />
+                            <label>Yorum</label>
+                            <input type="text" asp-for="ReviewText" class="form-control" />
+                            <br />
+                            <label>Değerlendirme Tarihi</label>
+                            <input type="date" asp-for="ReviewDate" class="form-control" />
+                            <br />
+                            <button class="btn btn-info">Yorumu Oluştur</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+

@@ -1,0 +1,44 @@
+﻿@model Order
+@{
+    ViewData["Title"] = "CreateOrder";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row clearfix">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="body">
+                        <h4>🚚 Sipariş Ekleme Sayfası</h4>
+                        <form method="post">
+                            <label>Müşteri</label>
+                            <input type="text" asp-for="CustomerId" class="form-control" />
+                            <br />
+                            <label>Ürün</label>
+                            <input type="text" asp-for="ProductId" class="form-control" />
+                            <br />  
+                            <label>Sipariş Tarihi</label>
+                            <input type="text" asp-for="OrderDate" class="form-control" />
+                            <br />
+                            <label>Sipariş Durumu</label>
+                            <input type="text" asp-for="OrderStatus" class="form-control" />
+                            <br />
+                            <label>Sipariş Notu</label>
+                            <input type="text" asp-for="OrderNotes" class="form-control" />
+                            <br />
+                            <label>Ödeme Yöntemi</label>
+                            <input type="text" asp-for="PaymentMethod" class="form-control" />
+                            <br />
+                            <label>Sipariş Adedi</label>
+                            <input type="text" asp-for="Quantity" class="form-control" />
+                            <br />
+                            <button class="btn btn-info">Siparişi Ekle</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

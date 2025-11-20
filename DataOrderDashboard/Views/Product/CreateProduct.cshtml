@@ -1,0 +1,48 @@
+﻿@model Product
+@{
+    ViewData["Title"] = "CreateProduct";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row clearfix">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="body">
+                        <h4>🧮 Ürün Ekleme Sayfası</h4>
+                        <form method="post">
+                            <label>Ürün Adı</label>
+                            <input type="text" asp-for="ProductName" class="form-control" />
+                            <br />
+                            <label>Ürün Açıklaması</label>
+                            <input type="text" asp-for="ProductDescription" class="form-control" />
+                            <br />
+                            <label>Ürün Resmi</label>
+                            <input type="text" asp-for="ProductImageUrl" class="form-control" />
+                            <br />
+                            <label>Birim Fiyat</label>
+                            <input type="text" asp-for="UnitPrice" class="form-control" />
+                            <br />
+                            <label>Stok Sayısı</label>
+                            <input type="text" asp-for="StockQuantity" class="form-control" />
+                            <br />
+                            <label>Menşei Ülke</label>
+                            <input type="text" asp-for="CountryOfOrigin" class="form-control" />
+                            <br />
+                            <label> Ürün Kategorisi</label>
+                            <div class="form-line">
+                                <select asp-for="CategoryId" asp-items="ViewBag.CategoryList" class="form-control show-tick">
+                                    <option value="">-- Kategori Seçin --</option>
+                                </select>
+                            </div>
+                            <br />
+                            <button class="btn btn-info">Ürünü Oluştur</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

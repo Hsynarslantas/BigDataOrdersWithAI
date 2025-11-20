@@ -1,0 +1,227 @@
+﻿
+@{
+    ViewData["Title"] = "TextualStatistic";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+@{
+    ViewData["Title"] = "TextualStatistic";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<style>
+    /* Sadece renk paleti */
+    .l-salmon {
+        background: linear-gradient(135deg, #ff6f61, #ff9671) !important;
+    }
+
+    .l-amber {
+        background: linear-gradient(135deg, #ffb300, #ffcc80) !important;
+    }
+
+    .l-green {
+        background: linear-gradient(135deg, #4caf50, #81c784) !important;
+    }
+
+    .l-cyan {
+        background: linear-gradient(135deg, #00bcd4, #4dd0e1) !important;
+    }
+
+    .l-orange-deep {
+        background: linear-gradient(135deg, #ff7043, #ff8a65) !important;
+    }
+
+    .l-parpl {
+        background: linear-gradient(135deg, #ba68c8, #ce93d8) !important;
+    }
+
+    .l-olive {
+        background: linear-gradient(135deg, #43a047, #81c784) !important;
+    }
+
+    .l-gray {
+        background: linear-gradient(135deg, #607d8b, #90a4ae) !important;
+    }
+
+    .l-violet {
+        background: linear-gradient(135deg, #8e24aa, #ab47bc) !important;
+    }
+
+    .l-gold {
+        background: linear-gradient(135deg, #fbc02d, #fff176) !important;
+    }
+
+    .l-turk {
+        background: linear-gradient(135deg, #ffd54f, #ffe082) !important;
+    }
+
+    .l-sea {
+        background: linear-gradient(135deg, #26c6da, #80deea) !important;
+    }
+
+    .l-coral {
+        background: linear-gradient(135deg, #ff7043, #ffab91) !important;
+    }
+
+    .l-purple {
+        background: linear-gradient(135deg, #9c27b0, #e1bee7) !important;
+    }
+
+    .l-teal {
+        background: linear-gradient(135deg, #009688, #4db6ac) !important;
+    }
+
+    .l-magenta {
+        background: linear-gradient(135deg, #e91e63, #f48fb1) !important;
+    }
+</style>
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="block-header">
+            <div class="row">
+                <div class="col-lg-7 col-md-6 col-sm-12">
+                    <h2>
+                        Metinsel İstatistikler
+                        <small class="text-muted">Genel Bilgi Kartları</small>
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row clearfix mt-4">
+        <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="card info-box-2 l-salmon" style="border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.15); color:white; text-align:center; padding:12px 0;">
+                <i class="zmdi zmdi-money" style="font-size:34px;"></i>
+                <div style="font-size:14px; font-weight:500;">En Pahalı Ürün</div>
+                <div style="font-size:17px; font-weight:600;">@ViewBag.MostExpoensiveProduct</div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="card info-box-2 l-amber" style="border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.15); color:white; text-align:center; padding:12px 0;">
+                <i class="zmdi zmdi-money-off" style="font-size:34px;"></i>
+                <div style="font-size:14px; font-weight:500;">En Ucuz Ürün</div>
+                <div style="font-size:17px; font-weight:600;">@ViewBag.MostCheapestProduct</div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="card info-box-2 l-green" style="border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.15); color:white; text-align:center; padding:12px 0;">
+                <i class="zmdi zmdi-chart-donut" style="font-size:34px;"></i>
+                <div style="font-size:14px; font-weight:500;">En Fazla Stoklu Ürün</div>
+                <div style="font-size:17px; font-weight:600;">@ViewBag.TopStockProduct</div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="card info-box-2 l-cyan" style="border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.15); color:white; text-align:center; padding:12px 0;">
+                <i class="zmdi zmdi-fire" style="font-size:34px;"></i>
+                <div style="font-size:14px; font-weight:500;">Son Eklenen Ürün</div>
+                <div style="font-size:17px; font-weight:600;">@ViewBag.LastAddedProduct</div>
+            </div>
+        </div>
+    </div>
+    <div class="row clearfix mt-3">
+        <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="card info-box-2 l-orange-deep" style="border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.15); color:white; text-align:center; padding:12px 0;">
+                <i class="zmdi zmdi-globe" style="font-size:34px;"></i>
+                <div style="font-size:14px; font-weight:500;">Son Eklenen Müşteri</div>
+                <div style="font-size:17px; font-weight:600;">@ViewBag.LastAddedCustomer</div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="card info-box-2 l-parpl" style="border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.15); color:white; text-align:center; padding:12px 0;">
+                <i class="zmdi zmdi-airplane" style="font-size:34px;"></i>
+                <div style="font-size:14px; font-weight:500;">Tercih Edilen Ödeme Yöntemi</div>
+                <div style="font-size:17px; font-weight:600;">@ViewBag.MostPaymentMethodByName</div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="card info-box-2 l-olive" style="border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.15); color:white; text-align:center; padding:12px 0;">
+                <i class="zmdi zmdi-money-box" style="font-size:34px;"></i>
+                <div style="font-size:14px; font-weight:500;">En Fazla Sipariş Edilen Ürün</div>
+                <div style="font-size:17px; font-weight:600;">@ViewBag.MostOrderedProduct</div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="card info-box-2 l-gray" style="border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.15); color:white; text-align:center; padding:12px 0;">
+                <i class="zmdi zmdi-chart" style="font-size:34px;"></i>
+                <div style="font-size:14px; font-weight:500;">En Az Sipariş Edilen Ürün</div>
+                <div style="font-size:17px; font-weight:600;">@ViewBag.MinOrderedProduct</div>
+            </div>
+        </div>
+    </div>
+    <div class="row clearfix mt-3">
+        <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="card info-box-2 l-violet" style="border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.15); color:white; text-align:center; padding:12px 0;">
+                <i class="zmdi zmdi-trending-up" style="font-size:34px;"></i>
+                <div style="font-size:14px; font-weight:500;">En Fazla Sipariş Veren Ülke</div>
+                <div style="font-size:17px; font-weight:600;">@ViewBag.MaxOrderedCountry</div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="card info-box-2 l-gold" style="border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.15); color:white; text-align:center; padding:12px 0;">
+                <i class="zmdi zmdi-star" style="font-size:34px;"></i>
+                <div style="font-size:14px; font-weight:500;">En Fazla Sipariş Veren Şehir</div>
+                <div style="font-size:17px; font-weight:600;">@ViewBag.MaxOrderedCity</div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="card info-box-2 l-turk" style="border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.15); color:white; text-align:center; padding:12px 0;">
+                <i class="zmdi zmdi-calendar" style="font-size:34px;"></i>
+                <div style="font-size:14px; font-weight:500;">En Çok Satış Yapan Kategori</div>
+                <div style="font-size:17px; font-weight:600;">@ViewBag.TopSalesByCategory</div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="card info-box-2 l-sea" style="border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.15); color:white; text-align:center; padding:12px 0;">
+                <i class="zmdi zmdi-face" style="font-size:34px;"></i>
+                <div style="font-size:14px; font-weight:500;">En Fazla Sipariş Veren Müşteri</div>
+                <div style="font-size:17px; font-weight:600;">@ViewBag.MostOrderByCustomer</div>
+            </div>
+        </div>
+    </div>
+    <div class="row clearfix mt-3">
+        <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="card info-box-2 l-coral" style="border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.15); color:white; text-align:center; padding:12px 0;">
+                <i class="zmdi zmdi-balance-wallet" style="font-size:34px;"></i>
+                <div style="font-size:14px; font-weight:500;">En Fazla Gönderilen Ürün</div>
+                <div style="font-size:17px; font-weight:600;">@ViewBag.TopCompletedByProduct</div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="card info-box-2 l-purple" style="border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.15); color:white; text-align:center; padding:12px 0;">
+                <i class="zmdi zmdi-shopping-basket" style="font-size:34px;"></i>
+                <div style="font-size:14px; font-weight:500;">En Az Satış Yapan Kategori</div>
+                <div style="font-size:17px; font-weight:600;">@ViewBag.LowestSalesByCategory</div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="card info-box-2 l-teal" style="border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.15); color:white; text-align:center; padding:12px 0;">
+                <i class="zmdi zmdi-undo" style="font-size:34px;"></i>
+                <div style="font-size:14px; font-weight:500;">En Fazla İade Edilen Ürün</div>
+                <div style="font-size:17px; font-weight:600;">@ViewBag.TopReturnedByProduct</div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="card info-box-2 l-magenta" style="border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.15); color:white; text-align:center; padding:12px 0;">
+                <i class="zmdi zmdi-local-offer" style="font-size:34px;"></i>
+                <div style="font-size:14px; font-weight:500;">En Fazla Ürün Satan Ülke</div>
+                <div style="font-size:17px; font-weight:600;">@ViewBag.TopSaledCountry</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+

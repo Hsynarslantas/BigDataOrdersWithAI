@@ -1,0 +1,114 @@
+﻿@model List<Review>
+@{
+    ViewData["Title"] = "ReviewList";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row clearfix">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="body">
+                        <h4>⭐ Değerlendirme Sayfası</h4>
+                        <table class="table table-bordered table-hover">
+                            <tr>
+                                <th>#</th>
+                                <th>Müşteri Adı</th>
+                                <th>Ürün Adı</th>
+                                <th>Değerlendirme / ⭐</th>
+                                <th>Yorum Analizi</th>
+                                <th>Yorumu Gör</th>
+                                <th>Güncelle</th>
+                                <th>Sil</th>
+                            </tr>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.ReviewId</td>
+                                    <td>@item.Customer.CustomerName @item.Customer.CustomerSurname</td>
+                                    <td>@item.Product.ProductName </td>
+                                    <td>@item.Rating</td>
+                                    <td>@item.Sentiment</td>
+                                    <td>
+                                        <a href="/Review/UpdateReview/@item.ReviewId" title="Yorumu Gör" style="font-size:22px;">👁️</a>
+                                    </td>
+                                    <td>
+                                        <a href="/Review/UpdateReview/@item.ReviewId" title="Güncelle" style="font-size:22px; color:green;">✏️</a>
+                                    </td>
+                                    <td>
+                                        <a href="/Review/DeleteReview/@item.ReviewId" title="Sil" style="font-size:22px; color:red;">❌</a>
+                                    </td>
+                                   
+                                </tr>
+                            }
+                        </table>
+                        <a href="/Review/CreateReview/" class="btn btn-default" style="background-color:turquoise">Yeni Kategori Girişi</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<div class="mt-3 text-center">
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+
+            @if (ViewBag.CurrentPage > 1)
+            {
+                <li class="page-item">
+                    <a class="page-link" href="/Product/ProductList?page=@(ViewBag.CurrentPage - 1)">Önceki</a>
+                </li>
+            }
+
+            @{
+                int startPage = Math.Max(1, ViewBag.CurrentPage - 2);
+                int endPage = Math.Min(ViewBag.TotalPages, ViewBag.CurrentPage + 2);
+
+                if (startPage > 1)
+                {
+                    <li class="page-item">
+                        <a class="page-link" href="/Review/ReviewList?page=1">1</a>
+                    </li>
+                    if (startPage > 2)
+                    {
+                        <li class="page-item disabled">
+                            <span class="page-link">...</span>
+                        </li>
+                    }
+                }
+
+                for (int i = startPage; i <= endPage; i++)
+                {
+                    <li class="page-item @(i == ViewBag.CurrentPage ? "active" : "")">
+                        <a class="page-link" href="/Review/ReviewList?page=@i">@i</a>
+                    </li>
+                }
+
+                if (endPage < ViewBag.TotalPages)
+                {
+                    if (endPage < ViewBag.TotalPages - 1)
+                    {
+                        <li class="page-item disabled">
+                            <span class="page-link">...</span>
+                        </li>
+                    }
+                    <li class="page-item">
+                        <a class="page-link" href="/Review/ReviewList?page=@ViewBag.TotalPages">@ViewBag.TotalPages</a>
+                    </li>
+                }
+            }
+
+            @if (ViewBag.CurrentPage < ViewBag.TotalPages)
+            {
+                <li class="page-item">
+                    <a class="page-link" href="/Review/ReviewList?page=@(ViewBag.CurrentPage + 1)">Sonraki</a>
+                </li>
+            }
+
+        </ul>
+    </nav>
+</div>
+

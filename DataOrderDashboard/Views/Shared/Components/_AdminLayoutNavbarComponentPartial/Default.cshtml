@@ -1,0 +1,19 @@
+﻿<nav class="navbar">
+    <div class="col-12">
+
+        <div class="navbar-header">
+            <a href="javascript:void(0);" class="bars"></a>
+            <a class="navbar-brand" href="/Dashboard/Index/">Veri Analizi Paneli</a>
+        </div>
+
+        @await Component.InvokeAsync("_NavbarQuickMenuComponentPartial")
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="javascript:void(0);" class="js-search" data-close="true"><i class="zmdi zmdi-search"></i></a></li>
+            @await Component.InvokeAsync("_NavbarNotificationComponentPartial")
+            @await Component.InvokeAsync("_NavbarTaskComponentPartial")
+
+            <li><a href="/Dashboard/Index/" class="mega-menu xs-hide" data-close="true"><i class="zmdi zmdi-power"></i></a></li>
+            <li class=""><a href="javascript:void(0);" class="js-right-sidebar" data-close="true"><i class="zmdi zmdi-settings zmdi-hc-spin"></i></a></li>
+        </ul>
+    </div>
+</nav>

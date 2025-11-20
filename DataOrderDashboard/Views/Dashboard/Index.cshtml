@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+<section class="content">
+    @await Component.InvokeAsync("_DashboardHeaderComponentPartial")
+<div class="container-fluid">
+        @await Component.InvokeAsync("_DashboardTopCircleComponentPartial")
+        <br /><br />
+    <div class="row clearfix"> 
+            @await Component.InvokeAsync("_DashboardChartComponentPartial")
+
+            @await Component.InvokeAsync("_DashboardKpiComponentPartial")
+    </div>
+    <div class="row clearfix">
+            @await Component.InvokeAsync("_DashboardSubStatisticComponentPartial")
+    </div>
+    <div class="row clearfix">
+    </div>
+        @await Component.InvokeAsync("_DashboardMapComponentPartial")
+        <br /><br />
+    <div class="row clearfix">
+            @await Component.InvokeAsync("_DashboardLast5ReviewsComponentPartial")
+
+            @await Component.InvokeAsync("_DashboardStockCriticalLevelByProductComponentPartial")
+
+            @await Component.InvokeAsync("_DashboardDonutChartComponentPartial")
+    </div>
+        @await Component.InvokeAsync("_DashboardTodayOrdersComponentPartial")
+    <div class="row clearfix">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="body">
+                    <p class="m-b-0">© 2025 TravelCrocoDesign by <a href="http://thememakker.com/" target="black">H&A</a> </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>

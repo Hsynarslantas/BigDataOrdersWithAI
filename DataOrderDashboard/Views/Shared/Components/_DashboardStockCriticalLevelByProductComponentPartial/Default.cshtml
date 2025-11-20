@@ -1,0 +1,26 @@
+﻿@model List<Product>
+<div class="col-lg-4 col-md-6 col-sm-12">
+    <div class="card activities">
+        <div class="header">
+            <h2>Stok Sayısı Kritik Seviye Olan / Bitenler</h2>
+        </div>
+        <div class="body">
+            @foreach(var item in Model)
+            {
+                var stockClass = item.StockQuantity < 5
+                ? "text-danger"
+                : item.StockQuantity < 10
+                ? "text-warning"
+                : "text-success";
+            <div class="streamline b-l b-accent">
+                <div class="sl-item b-danger">
+                    <div class="sl-content">
+                        <div class="text-muted-dk">@item.ProductName</div>
+                        <p class="@stockClass">@item.StockQuantity Adet</p>
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</div>
